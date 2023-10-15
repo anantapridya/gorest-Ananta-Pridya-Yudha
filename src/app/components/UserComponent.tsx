@@ -60,6 +60,7 @@ const UserComponent: React.FC<UserProps> = ({ user, onChange }) => {
             className="flex w-full justify-between bg-slate-900 p-4 rounded-xl"
             onMouseEnter={() => setIsHover(item.id)}
             onMouseLeave={() => setIsHover(0)}
+            key={item.id}
           >
             <p className="font-bold text-lg">{item.name}</p>
             <div className="flex gap-x-3">

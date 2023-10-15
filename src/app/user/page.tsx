@@ -7,7 +7,6 @@ import { editUser, getAllUser, postUser } from "../../../api";
 import DataPagination from "../components/DataPagination";
 import { IUser } from "../../../type/type";
 import { Alert, Radio } from "antd";
-import { render } from "react-dom";
 const RadioGroup = Radio.Group;
 
 export default function User() {

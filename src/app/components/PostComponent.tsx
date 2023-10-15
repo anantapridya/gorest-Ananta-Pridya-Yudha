@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { getAllComment, getCommentByPostId, getUserDetail } from "../../../api";
 import { IComment, IPost, IUser } from "../../../type/type";
-import DataPagination from "./DataPagination";
 
 interface PostProps {
   post: IPost[];

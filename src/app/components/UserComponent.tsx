@@ -42,7 +42,7 @@ const UserComponent: React.FC<UserProps> = ({ user, onChange }) => {
         email: email,
         gender: gender,
         status: status,
-        isEdit: isEdit
+        isEdit: isEdit,
       });
     }
   };
@@ -57,10 +57,10 @@ const UserComponent: React.FC<UserProps> = ({ user, onChange }) => {
       {user?.map((item: IUser) => {
         return (
           <div
+            key={item.id}
             className="flex w-full justify-between bg-slate-900 p-4 rounded-xl"
             onMouseEnter={() => setIsHover(item.id)}
             onMouseLeave={() => setIsHover(0)}
-            key={item.id}
           >
             <p className="font-bold text-lg">{item.name}</p>
             <div className="flex gap-x-3">
@@ -78,10 +78,22 @@ const UserComponent: React.FC<UserProps> = ({ user, onChange }) => {
                 >
                   Delete
                 </button>
-                <button onClick={(e) => {
-                  e.preventDefault();
-                  handleEdit(e, item.id, item.name, item.email, item.gender, item.status, true)
-                }}>Edit</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleEdit(
+                      e,
+                      item.id,
+                      item.name,
+                      item.email,
+                      item.gender,
+                      item.status,
+                      true
+                    );
+                  }}
+                >
+                  Edit
+                </button>
               </div>
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function Home() {
       // const totalPages = parseInt(data.get("X-Pagination-Pages"))
       console.log(data)
       // setTotalPages(Number(data.header))
-      setDataPost(data.data)
+      setDataPost(data)
       setDataUser(user)
     };
     fetchData()

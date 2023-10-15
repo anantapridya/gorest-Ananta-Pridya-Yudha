@@ -20,9 +20,9 @@ export const getAllPost = async (
       next: { revalidate: 0 },
     }
   );
-  const data: IPost[] = await res.json();
-  const header: number = parseInt(res.headers.get("X-Pagination-Pages"));
-  return { data, header };
+  // const data: IPost[] = await res.json();
+  // const header: number = parseInt(res.headers.get("X-Pagination-Pages"));
+  return await res.json()
 };
 
 export const getAllComment = async (): Promise<IComment[]> => {

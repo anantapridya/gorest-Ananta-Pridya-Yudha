@@ -9,7 +9,7 @@ interface PostProps {
   owner: IUser[];
 }
 
-const PostComponent: React.FC<PostProps> = ({ post, owner }) => {
+const PostComponent: React.FC<PostProps> = ( {post, owner} ) => {
   //   console.log(post);
   //   console.log(owner);
   const [comment, setcomments] = useState<IComment[]>();

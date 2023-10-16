@@ -9,8 +9,8 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   // const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [dataPost, setDataPost] = useState<IPost[]>()
-  const [dataUser, setDataUser] = useState<IUser[]>()
+  const [dataPost, setDataPost] = useState<IPost[] | undefined | any>()
+  const [dataUser, setDataUser] = useState<IUser[] | undefined | any>()
   const [pageData, setPageData] = useState<number>(1);
   const [pageSizeData, setPageSizeData] = useState<number>(10);
   const [totalPages, setTotalPages] = useState<number>()
@@ -20,8 +20,8 @@ export default function Home() {
   // const user = await getAllUser(50);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllPost(pageSizeData, pageData, query);
+    const fetchData = async () => { 
+      const data:IPost[] = await getAllPost(pageSizeData, pageData, query);
       const user: IUser[] = await getAllUser(50, 1, '')
       // const totalPages = parseInt(getAllPost.headers.get("X-Pagination-Pages"));
       // const totalPages = parseInt(response.headers.get("X-Pagination-Pages"));

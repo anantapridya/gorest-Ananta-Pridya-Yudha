@@ -4,16 +4,15 @@ const baseURL = "https://gorest.co.in/public/v2";
 const bearerToken =
   "4ceb265e9fe82f4be24bf6194ea24e5fb34eadd82b5f41fd846b61f9524fb117";
 
-interface IResponsePost {
-  data: IPost[];
-  header: number;
-}
+// export interface IResponsePost {
+//   data: IPost[]
+// }
 
 export const getAllPost = async (
   number_perpage: number,
   page: number,
   query: string
-): Promise<IResponsePost[]> => {
+): Promise<IPost[]> => {
   const res = await fetch(
     `${baseURL}/posts?per_page=${number_perpage}&page=${page}&body=${query}`,
     {

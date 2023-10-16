@@ -10,15 +10,15 @@ import { Alert, Radio } from "antd";
 const RadioGroup = Radio.Group;
 
 export default function User() {
-  const [dataUser, setDataUser] = useState<IUser[]>();
+  const [dataUser, setDataUser] = useState<IUser[] | any>();
   const [query, setQuery] = useState<string>("");
   const [pageData, setPageData] = useState<number>(1);
   const [pageSizeData, setPageSizeData] = useState<number>(10);
-  const [id, setId] = useState<number>()
-  const [name, setName] = useState<string>();
-  const [email, setEmail] = useState<string>();
-  const [gender, setGender] = useState<"male" | "female" | "">();
-  const [status, setStatus] = useState<"active" | "inactive" | "">();
+  const [id, setId] = useState<number | any>()
+  const [name, setName] = useState<string | undefined | any>();
+  const [email, setEmail] = useState<string | any>();
+  const [gender, setGender] = useState<"male" | "female" | "" | any>();
+  const [status, setStatus] = useState<"active" | "inactive" | "" | any>();
   const [isComplete, setIsComplete] = useState<boolean>(false);
   const [addUser, setAddUser] = useState<boolean>(false);
   const [isChange, setIsChange] = useState<boolean>(false)
@@ -27,7 +27,7 @@ export default function User() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllUser(pageSizeData, pageData, query);
-      //   const user: IUser[] = await getAllUser(50, 1)
+        // const user: IUser[] = await getAllUser(50, 1)
       // const totalPages = parseInt(getAllPost.headers.get("X-Pagination-Pages"));
       // const totalPages = parseInt(response.headers.get("X-Pagination-Pages"));
       // const totalPages = parseInt(data.get("X-Pagination-Pages"))
@@ -52,11 +52,6 @@ export default function User() {
     if (name && email && gender && status) {
       setIsComplete(true);
     } else setIsComplete(false);
-    console.log(name);
-    console.log(email);
-    console.log(gender);
-    console.log(status);
-    console.log(isComplete);
   }, [name, email, gender, status]);
 
   const handlePost = async () => {

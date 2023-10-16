@@ -57,7 +57,7 @@ const UserComponent: React.FC<UserProps> = ({ user, onChange }) => {
       {user?.map((item: IUser) => {
         return (
           <div
-            key={item.id}
+            key={item.id + 1}
             className="flex w-full justify-between bg-slate-900 p-4 rounded-xl"
             onMouseEnter={() => setIsHover(item.id)}
             onMouseLeave={() => setIsHover(0)}

@@ -166,10 +166,6 @@ export default function User() {
                   Inactive
                 </Radio>
               </RadioGroup>
-              {/* <input type="radio" name="status" />
-              <span>Active</span>
-              <input type="radio" name="status" />
-              <span>Inactive</span> */}
             </div>
             <button
               className={`col-span-4 mt-5 py-2 font-bold ${
